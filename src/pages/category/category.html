@@ -79,7 +79,7 @@
                         </div>
                         <div class="detail">
                           <div class="title">{{list.name}}</div>
-                          <div class="price">￥{{list.price}}</div>
+                          <div class="price">￥{{list.price | priceSwitch}}</div>
                           <div class="recommend">
                             <span>推荐值:</span>
                             <span>{{list.recommend}}</span>
@@ -136,7 +136,7 @@
               <h3 class="category-title"> 热门分类  </h3>
               <ul class="category-content">
                 <li class="category-item js-category-item" v-for="(list, index) in subData.categoryList" :key="index"
-                :data-item-id="list.id" :data-item-name="list.name">
+                :data-item-id="list.id" :data-item-name="list.name" @click='toSearch(list)'>
                   <img :src="list.img" :alt="list.name" class="category-img">
                   <span class="category-item-name">
                   {{list.name}}            </span>

@@ -6,7 +6,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import url from 'js/api.js'
 
-import Foot from 'components/Foot.vue'
+import mixin from 'js/mixin'
 
 new Vue({
   el: '#app',
@@ -16,9 +16,7 @@ new Vue({
     subData: null,
     rankData:null
   },
-  components: {
-    Foot
-  },
+  mixins:[mixin],
   created() {
     this.getTopLists()
     this.getSubLists(0)
@@ -44,6 +42,9 @@ new Vue({
       axios.get(url.rank).then(res => {
         this.rankData = res.data.data
       })
+    },
+    toSearch(list){
+      location.href = `search.html?keyword=${list.name}&id=${list.id}`
     }
   }
 })
