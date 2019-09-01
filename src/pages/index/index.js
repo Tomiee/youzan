@@ -5,7 +5,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import url from 'js/api.js'
 
-import Foot from 'components/Foot.vue'
+// import Foot from 'components/Foot.vue'
 import Swipe from 'components/Swiper'
 
 import mixin from 'js/mixin'

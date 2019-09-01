@@ -6,6 +6,7 @@ import Vue from 'vue'
 import Axios from 'axios'
 import qs from 'qs'
 import url from 'js/api.js'
+import Velocity from 'velocity-animate'
 
 import mixin from  'js/mixin'
 
@@ -31,17 +32,14 @@ new Vue({
       })
     },
     move(){
-      console.log(22)
-      console.log('body'+document.body.scrollTop)
-      // console.log('html'+document.html.scrollTop)
-      console.log(container[0].scrollTop)
-      console.log(333)
-      if(document.body.scrollTop > 10){
+      if(window.scrollY > 300){
         this.isShow = true
-        console.log(111)
       }else {
         this.isShow = false
       }
+    },
+    toTop(){
+      Velocity(document.body,'scroll',{duration:'300'})
     }
   }
 })
