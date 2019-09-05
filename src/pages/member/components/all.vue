@@ -16,7 +16,7 @@
     </div>
     <div v-if="lists&&!lists.length">没有地址,清添加</div>
     <div class="block stick-bottom-row center">
-      <router-link class="btn btn-blue js-no-webview-block js-add-address-btn" to="/address/form">
+      <router-link class="btn btn-blue js-no-webview-block js-add-address-btn" :to="{name:'form',query:{type:'add'}}">
             新增地址
         </router-link>
     </div>

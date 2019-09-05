@@ -9,7 +9,7 @@
         </div>
         <div class="block-item">
           <label>联系电话</label>
-          <input type="tel" placeholder="联系电话" name="tel" v-model="tel" maxlength="11">
+          <input type="tel" placeholder="联系电话" name="tel" v-model.trim="tel" maxlength="11">
         </div>
         <div class="block-item">
           <label>选择地区</label>
@@ -38,9 +38,10 @@
       <div class="block-item c-blue center">保存</div>
     </div>
     <div class="block section js-delete block-control-btn" v-show="type=='edit'">
-      <div class="block-item c-red center">删除</div>
+      <div class="block-item c-red center" @click="remove">删除</div>
     </div>
-    <div class="block stick-bottom-row center js-save-default" v-show="type=='edit'">
+    <div class="block stick-bottom-row center js-save-default" v-show="type=='edit'"
+    @click="setDefault">
       <button class="btn btn-standard js-save-default-btn">设为默认收货地址</button>
     </div>
   </div>
